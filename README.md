@@ -1,3 +1,0 @@
-# Barber
-Sistema de Barbearia
-

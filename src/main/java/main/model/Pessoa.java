@@ -22,9 +22,10 @@ public class Pessoa  implements Serializable{
 	
 	private String sobrenome;
 	
-	private int idade;
+	private String telefone;
 	
-	
+	private String email;
+		
 
 	public Long getId() {
 		return id;
@@ -55,14 +56,23 @@ public class Pessoa  implements Serializable{
 		this.sobrenome = sobrenome;
 	}
 
-
-	public int getIdade() {
-		return idade;
+	public String getTelefone() {
+		return telefone;
 	}
 
 
-	public void setIdade(int idade) {
-		this.idade = idade;
+	public void setTelefone(String telefone) {
+		this.telefone = telefone;
+	}
+
+
+	public String getEmail() {
+		return email;
+	}
+
+
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 

@@ -23,7 +23,6 @@ form input[type=submit] {
 </style>
 </head>
 <body>
-
  <nav>
      <div class="nav-wrapper">
          <a href="#" class="brand-logo">Barber</a>
@@ -35,48 +34,33 @@ form input[type=submit] {
              <li><a href="/cadastropessoa">Clientes</a></li>
              <li><a href="#">Profissionais</a></li>
              <li><a href="#">Aniversáriantes</a></li>
+             <li><a href="sass.html"><i class="material-icons">search</i></a></li>
+           
+             
         </ul>
          <ul class="side-nav" id="menu-mobile">
              <li><a href="#">Agenda</a></li>
              <li><a href="#">Clientes</a></li>
              <li><a href="#">Profissionais</a></li>
              <li><a href="#">Aniversáriantes</a></li>
+             
          </ul>
      </div>
  </nav>
+ 
+<br/>
+<br/>
 
 
-
-
-	<div class="row">
-		<form action="pesquisarpessoa" method="post"
-			class="input-fiel col s12">
-			<div class="row">
-				<div class="input-field col s12">
-					<label for="nomepesquisa" class="active">Pesquisa:</label> <input
-						name="nomepesquisa" class="validate"> <input
-						class="waves-effect waves-light btn-small" type="submit"
-						value="Buscar"> <a
-						class="waves-effect waves-light btn-small" href="/listapessoas">
-						Lista de Cadastros</a>
-				</div>
-			</div>
-		</form>
-	</div>
-
-
-	<!-- Modal Trigger -->
+	<!-- Modal Cadastro -->
 	<a class="waves-effect waves-light btn modal-trigger" href="#modal1">Cadastrar</a>
 
 	<!-- Modal Structure -->
 	<div id="modal1" class="modal modal-fixed-footer">
-		<div class="modal-content">
-
-
-
-			<form action="salvarpessoa" id="formpessoa" method="post"
-				th:object="${pessoaobj}" class="col s12">
-
+	
+		<form action="salvarpessoa" id="formpessoa" method="post"
+			th:object="${pessoaobj}" class="col s12">
+			<div class="modal-content">
 
 				<div class="row">
 
@@ -106,25 +90,13 @@ form input[type=submit] {
 
 				</div>
 
-				<div class="row">
-					<div class="input-fiel col s6">
-						<input class="waves-effect waves-light btn-small" type="submit"
-							value="Salvar">
-
-					</div>
-				</div>
-			</form>
-
-
-		</div>
-		<div class="modal-footer">
-			<input class="waves-effect waves-light btn-small" type="submit" value="Salvar">
-		</div>
+			</div>
+			<div class="modal-footer">
+				<input class="waves-effect waves-light btn-small" type="submit"
+					value="Salvar" th:field="*{email}">
+			</div>
+		</form>
 	</div>
-
-
-
-
 
 	<br/>
 <br/>
@@ -148,8 +120,8 @@ form input[type=submit] {
  <td th:text = "${pessoa.sobrenome}"></td>
   <td th:text = "${pessoa.telefone}"></td>
     <td th:text = "${pessoa.email}"></td>
- <td><a th:href="@{/editarpessoa/{idpessoa}(idpessoa=${pessoa.id})}">Editar</a></td>
-  <td><a th:href="@{/removerpessoa/{idpessoa}(idpessoa=${pessoa.id})}">Excluir</a></td>
+ <td><a class="material-icons" th:href="@{/editarpessoa/{idpessoa}(idpessoa=${pessoa.id})}">edit</a></td>
+  <td><a class="material-icons" th:href="@{/removerpessoa/{idpessoa}(idpessoa=${pessoa.id})}">delete</a></td>
  
  </tr>
 </table>
